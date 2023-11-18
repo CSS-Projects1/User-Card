@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: linear-gradient(to right,#95552a,#3b4371);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 20px;
+    border-radius: 5%;
+    box-shadow: 0 5px 15px rgb(0, 0, 0,.5);
+}
+.container .card .imag-box {
+    width: 100%;
+}
+.container .card .imag-box img{
+    width: inherit;
+}
+.container .card .text-box{
+    position: absolute;
+    bottom: -160px;
+    width: 100%;
+    color: white;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.197);
+    opacity: 1;
+    transition: bottom 1s linear 0.2s;
+}
+.container .card:hover .text-box{
+    bottom: 0;
+}
+.container .card .text-box .header-text{
+    letter-spacing: 2px;
+    line-height:1.7;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: opacity 1s linear 1s;
+}
+.container .card:hover .text-box .header-text{
+    opacity: 1;
+}
+.container .card .text-box .header-text h4{
+    text-transform: uppercase;
+    
+}
+.container .card .text-box .header-text p{
+    font-size: 14px;
+}
+.container .card .text-box .icon {
+    display: flex;
+    justify-content: center;
+}
+.container .card .text-box .icon li{
+    list-style: none;
+    margin-right: 15px;
+    margin-top: 10px;
+    transform: translateY(40px);
+    opacity: 0;
+    transition:1s;
+    transition-delay: calc(0.3s * var(--i));
+}
+.container .card:hover .text-box .icon li{
+    opacity: 1;
+    transform: translateY(0);
+}
+.container .card .text-box .icon li a{
+    color: white;
+}
